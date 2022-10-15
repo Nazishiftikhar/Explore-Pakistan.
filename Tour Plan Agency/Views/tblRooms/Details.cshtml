@@ -1,0 +1,50 @@
+﻿@model Tour_Plan_Agency.Models.tblRoom
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tblRoom</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.tblHotel.Hotel_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tblHotel.Hotel_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.No_Of_Person)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.No_Of_Person)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Room_image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Room_image)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Room_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

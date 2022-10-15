@@ -1,0 +1,74 @@
+﻿@using Tour_Plan_Agency.Models
+@using Tour_Plan_Agency.Utills
+
+@{ Layout = "~/views/shared/_Layoutcustomers.cshtml";
+    List<tblRoom> list = new List<tblRoom>();
+    if (Session["Cart"] != null)
+    {
+        list = (List<tblRoom>)Session["Cart"];
+    }
+    
+   
+    var user = CurrentUser.CurrentCustomer;
+}
+  
+<!--main-->
+<main class="main">
+    <div class="wrap">
+        <!--breadcrumbs-->
+              <div class="row">
+                <!--three-fourth content-->
+                <div class="three-fourth">
+                    <form id="/Home/BookTour" method="post" action="https://themeenergy.com/themes/html/book-your-travel/booking-step2.html" class="static-content booking">
+                        <fieldset>
+                            <h2><span>01 </span>Traveller info</h2>
+                            <div class="row">
+                                <div class="f-item one-half">
+                                    <label for="first_name">User name</label>
+                                    <input readonly type="text" id="first_name" name="first_name" value="@user.Customer_Name" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="f-item one-half">
+                                    <label for="email">Email address</label>
+                                    <input readonly type="email" id="email" name="email" value="@user.Customer_Email" />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="f-item one-half">
+                                   <label for="address"> Address </label>
+                                   <input readonly type="text" id="address" name="address" value="@user.Customer_Address" />
+                                </div>
+
+                            </div>
+                                                  
+                            <div class="row">
+                                <div class="f-item one-half">
+                                  <label for="Phoneno">Phone no</label>
+                                  <input readonly type="tel" id="phoneno" name="phoneno" value="@user.Customer_Phone" />
+                                </div>
+                            </div>
+                          
+                            <div class="title"> <span>Payment</span></div>
+                                <div>
+                                    <input value="Onlinepayment" name="Payment" type="radio" class="Custom-Control-input" />
+                                    <label class="Custom-Control-label" for="Credit">Online Payment</label>
+                                </div>
+
+                                <div>
+                                    <a href="@Url.Action("Booking", "Home")" title="Book now" class="gradient-button">Booking</a>
+                                </div> 
+                           
+                        </fieldset>          
+                    </form>       
+                </div>
+                     
+                    
+              </div>
+    </div>
+                
+   
+    
+               
+</main>
+<!--//main-->

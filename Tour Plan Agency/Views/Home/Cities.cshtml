@@ -1,0 +1,263 @@
+﻿@using Tour_Plan_Agency.Models;
+
+@{ Layout = "~/views/shared/_Layoutcustomers.cshtml";
+    Model1 db = new Model1();
+
+    }
+<!--main--> 
+<main class="main">
+    <div class="wrap">
+        <div class="row">
+        
+            <!--deals-->
+            <div class="full-width">
+                <header class="s-title">
+                    <h2>Most popular Cities</h2>
+                </header>
+                 
+                <div class="deals Cities">
+                    <div class="row" >
+                       
+                        @foreach (var item in db.tblCities)
+                        {
+                        <div class="deals Cities">
+                          
+                                <!--deal-->
+                               
+                                <article class="column one-fourth">
+                                 <figure><a href="@Url.Action("City", "Home", new { id = item.City_ID })" title=""><img src="~/content/Customers/images/uploads/london1.jpg" alt="" /></a></figure>
+                                    <div class="details">
+
+                                        <h3>@item.City_Name</h3>
+
+                                        <h3>@item.City_Name.Count()</h3>
+
+                                        <span class="price">Price per person from  <em>$ 50</em> </span>
+
+                                        <a href="@Url.Action("Hotels", "Home", new { id = item.City_ID })" title="Book now" class="gradient-button">Hotels</a>
+                                    </div>
+
+                                </article>
+                                   
+                            </div>
+
+                        
+
+                            <!--//deals-->
+                            <!--top destinations-->
+                        }
+                        </div>
+                        
+                        <header class="s-title">
+                            <h2>Top destinations around the world</h2>
+                        </header>
+
+                        <div class="destinations">
+                            <div class="row">
+                                <!--column-->
+                                <article class="one-fourth">
+                                    <figure><a href="#" title=""><img src="~/content/Customers/images/uploads/paris.jpg" alt="" /></a></figure>
+                                    <div class="details">
+                                        <a href="#" title="View all" class="gradient-button">View all</a>
+                                        <h4>Paris</h4>
+                                        <span class="count">55 Airlines</span>
+                                        <div class="ribbon">
+                                            <div class="half flight">
+                                                <a href="flights.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 150</span>
+                                                </a>
+                                            </div>
+                                            <div class="half hotel">
+                                                <a href="hotels.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 70</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!--//column-->
+                                <!--column-->
+                                <article class="one-fourth">
+                                    <figure><a href="#" title=""><img src="~/content/Customers/images/uploads/amsterdam.jpg" alt="" /></a></figure>
+                                    <div class="details">
+                                        <a href="#" title="View all" class="gradient-button">View all</a>
+                                        <h4>Amsterdam</h4>
+                                        <span class="count">29 Airlines</span>
+                                        <div class="ribbon">
+                                            <div class="half flight">
+                                                <a href="flights.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 150</span>
+                                                </a>
+                                            </div>
+                                            <div class="half hotel">
+                                                <a href="hotels.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 70</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!--//column-->
+                                <!--column-->
+                                <article class="one-fourth">
+                                    <figure><a href="#" title=""><img src="~/content/Customers/images/uploads/saint-petersburg.jpg" alt="" /></a></figure>
+                                    <div class="details">
+                                        <a href="#" title="View all" class="gradient-button">View all</a>
+                                        <h4>St Petersburg</h4>
+                                        <span class="count">58 Airlines</span>
+                                        <div class="ribbon">
+                                            <div class="half flight">
+                                                <a href="flights.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 150</span>
+                                                </a>
+                                            </div>
+                                            <div class="half hotel">
+                                                <a href="hotels.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 70</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!--//column-->
+                                <!--column-->
+                                <article class="one-fourth">
+                                    <figure><a href="#" title=""><img src="~/content/Customers/images/uploads/prague.jpg" alt="" /></a></figure>
+                                    <div class="details">
+                                        <a href="#" title="View all" class="gradient-button">View all</a>
+                                        <h4>Prague</h4>
+                                        <span class="count">29 Airlines</span>
+                                        <div class="ribbon">
+                                            <div class="half flight">
+                                                <a href="flights.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 150</span>
+                                                </a>
+                                            </div>
+                                            <div class="half hotel">
+                                                <a href="hotels.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 70</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!--//column-->
+                                <!--column-->
+                                <article class="one-fourth">
+                                    <figure><a href="#" title=""><img src="~/content/Customers/images/uploads/prague.jpg" alt="" /></a></figure>
+                                    <div class="details">
+                                        <a href="#" title="View all" class="gradient-button">View all</a>
+                                        <h4>Prague</h4>
+                                        <span class="count">29 Airlines</span>
+                                        <div class="ribbon">
+                                            <div class="half flight">
+                                                <a href="flights.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 150</span>
+                                                </a>
+                                            </div>
+                                            <div class="half hotel">
+                                                <a href="hotels.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 70</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!--//column-->
+                                <!--column-->
+                                <article class="one-fourth promo">
+                                    <div class="ribbon-small">- 20%</div>
+                                    <figure><a href="#" title=""><img src="~/content/Customers/images/uploads/paris.jpg" alt="" /></a></figure>
+                                    <div class="details">
+                                        <a href="#" title="View all" class="gradient-button">View all</a>
+                                        <h4>Paris</h4>
+                                        <span class="count">52 Airlines</span>
+                                        <div class="ribbon">
+                                            <div class="half flight">
+                                                <a href="flights.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 150</span>
+                                                </a>
+                                            </div>
+                                            <div class="half hotel">
+                                                <a href="hotels.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 70</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!--//column-->
+                                <!--column-->
+                                <article class="one-fourth">
+                                    <figure><a href="#" title=""><img src="~/content/Customers/images/uploads/amsterdam.jpg" alt="" /></a></figure>
+                                    <div class="details">
+                                        <a href="#" title="View all" class="gradient-button">View all</a>
+                                        <h4>Amsterdam</h4>
+                                        <span class="count">29 Airlines</span>
+                                        <div class="ribbon">
+                                            <div class="half flight">
+                                                <a href="flights.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 150</span>
+                                                </a>
+                                            </div>
+                                            <div class="half hotel">
+                                                <a href="hotels.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 70</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!--//column-->
+                                <!--column-->
+                                <article class="one-fourth">
+                                    <figure><a href="#" title=""><img src="~/content/Customers/images/uploads/saint-petersburg.jpg" alt="" /></a></figure>
+                                    <div class="details">
+                                        <a href="#" title="View all" class="gradient-button">View all</a>
+                                        <h4>St Petersburg</h4>
+                                        <span class="count">58 Airlines</span>
+                                        <div class="ribbon">
+                                            <div class="half flight">
+                                                <a href="flights.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 150</span>
+                                                </a>
+                                            </div>
+                                            <div class="half hotel">
+                                                <a href="hotels.html" title="View all">
+                                                    <span class="small">from</span>
+                                                    <span class="price">&#36; 70</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!--//column-->
+                            </div>
+                        </div>
+                        <!--//top destinations-->
+                    
+
+                    </div>
+               
+           </div>
+        </div>
+        </div>
+    
+
+</main>
+<!--//main-->

@@ -1,0 +1,63 @@
+﻿@model Tour_Plan_Agency.Models.tblBookTour
+
+@{
+    ViewBag.Title = "Invoice";
+}
+
+<h2>Invoice</h2>
+<table class=" table">
+
+
+    <tr>
+
+        <td>NAME</td>
+        <td>@Model.tblCustomer.Customer_Name</td>
+        <td>Date</td>
+        <td>@Model.Booking_Date</td>
+
+    </tr>
+
+    <tr>
+
+        <td>Status</td>
+        <td>@Model.Booking_Status</td>
+        <td>Payment</td>
+        <td>@Model.Payment</td>
+
+    </tr>
+</table>
+<table class="table table-bordered">
+    <tr>
+        <td>
+            Room Name
+        </td>
+        <td>
+            Price
+        </td>
+        <td>
+            Quantity
+        </td>
+        <td>
+            Total
+        </td>
+    </tr>
+    @foreach (var item in Model.tblTour_Detail)
+    {
+        <tr>
+
+            <td> @item.tblRoom.Room_Name</td>
+
+            <td>
+                @item.Room_Price
+            </td>
+            <td>@item.Room_quantity</td>
+            <td>@(item.Room_Price*item.Room_quantity) </td>
+
+        </tr>
+    }
+
+
+</table>
+<p>
+@Html.ActionLink("Back to List", "NewBookings")
+</p>

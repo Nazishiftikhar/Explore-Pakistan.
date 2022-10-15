@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Tour_Plan_Agency.Models.tblCity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <h2>Index</h2>
+
+    <p>
+        <a class="btn btn-primary glyphicon glyphicon-pencil " href="@Url.Action("create","tblCities")">Create New</a>
+
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                City ID
+            </th>
+            <th>
+                City Name
+            </th>
+            <th>
+                City Image
+            </th>
+        </tr>
+
+        @foreach (var city in Model)
+        {
+            <tr>
+                <td>
+                    @city.City_ID
+                </td>
+                <td>
+                    @city.City_Name
+                </td>
+
+                <td>
+                    <img src="@Url.Content(city.City_image)" width="100" height="100" />
+                </td>
+                <td>
+                    <a class=" btn btn-primary glyphicon glyphicon-edit" href=" @Url.Action("Edit", "tblCities", new { ID = city.City_ID })"> </a>
+                    <a class=" btn btn-success glyphicon glyphicon-book" href=" @Url.Action("Details", "tblCities", new { ID = city.City_ID })"> </a>
+                    <a class=" btn btn-danger glyphicon glyphicon-trash" href=" @Url.Action("Delete", "tblCities", new { ID = city.City_ID })"> </a>
+
+                </td>
+            </tr>
+        }
+    </table>
+    </body>

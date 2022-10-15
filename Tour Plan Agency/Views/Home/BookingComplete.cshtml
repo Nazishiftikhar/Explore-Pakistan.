@@ -1,0 +1,124 @@
+﻿@model Tour_Plan_Agency.Models.tblBookTour
+@using Tour_Plan_Agency.Models
+@using Tour_Plan_Agency.Utills
+@{
+    Layout = "~/views/shared/_Layoutcustomers.cshtml";
+
+    List<tblRoom> list = new List<tblRoom>();
+    if (TempData["Book"] != null)
+    {
+        list = (List<tblRoom>)TempData.Peek("Book");
+    }
+
+    int indexno = -1;
+    Decimal total = 0;
+}
+
+@{
+    ViewBag.Title = "DisplayCart";
+}
+
+<h2><b>Invoice</b></h2>
+
+
+
+<main class="main">
+    <div class="wrap">
+        <h3>Invoice</h3>
+        <div class="text-wrap">
+            @*<div class="output">
+                
+                
+                <p>Name: @Model.tblCustomer.Customer_Name </p>
+                
+               
+                <p>Date: @Model.Booking_Date</p>
+                <p>EmailAdress:@Model.tblCustomer.Customer_Email </p>
+                <p>Adress:@Model.tblCustomer.Customer_Address</p>
+                              
+            </div>*@
+        </div>
+
+        <!-- Start Cart  -->
+        <div class="cart-box-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="table-main table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr style="background-color:#76bdc5">
+                                        <th><b>Images</b></th>
+                                        <th><b>Hotel Rooms</b></th>
+                                        <th><b>Price</b></th>
+                                        <th><b>Quantity</b></th>
+                                        <th><b>Total </b></th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in list)
+                                    {
+                                        indexno++;
+                                        total += item.Room_Price;
+
+                                        <tr>
+                                            <td class="thumbnail-img">
+                                                <a href="#">
+                                                    <img class="img-fluid" src="@Url.Content(item.Room_image)" alt="" />
+                                                </a>
+                                            </td>
+                                            <td class="name-pr">
+                                                <a href="#">
+                                                    @item.Room_Name
+                                                </a>
+                                            </td>
+                                            <td class="price-pr">
+                                                <p>Rs:@item.Room_Price</p>
+                                            </td>
+                                            <td class="quantity-box">
+
+                                                <span style="margin:5px" ; font-size:20px;font-weight:bold">
+                                                    @item.quantity
+                                                </span>
+
+                                            </td>
+                                            <td class="total-pr">
+                                                <p>Rs:@(item.Room_Price*item.quantity)</p>
+                                            </td>
+
+
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <div class="center-block">
+   <input type="button" value=" Website Services" />
+
+    </div>
+     </br>
+        
+    <div class="col-s-pus-6-right">
+   <input type="button" value="Hotel Services" />
+
+    </div>
+  
+  
+
+    <!-- End Cart -->
+    <!-- Start Instagram Feed  -->
+    <!-- End Instagram Feed  -->
+
+</main>

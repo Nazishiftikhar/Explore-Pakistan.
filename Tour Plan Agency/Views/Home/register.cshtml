@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = "~/views/shared/_Layoutcustomers.cshtml"; }
+
+@Html.Raw(ViewBag.msg)
+    <!--slider-->
+    <div class="slider">
+        <ul id="hero-gallery" class="cS-hidden">
+            <li data-thumb="~/content/Customers/images/uploads/slider7.jpg">
+                <img src="~/content/Customers/images/uploads/slider7.jpg" alt="" />
+            </li>
+            <li data-thumb="~/content/Customers/images/uploads/slider3.jpg">
+                <img src="~/content/Customers/images/uploads/slider3.jpg" alt="" />
+            </li>  
+            <li data-thumb="~/content/Customers/images/uploads/slider2.jpg">
+                <img src="~/content/Customers/images/uploads/slider2.jpg" alt="" />
+            </li>
+        </ul>
+    </div>
+    <!--//slider-->
+    <!--search-->
+   
+    <!--//main-->
+    
+
+    <div class="lightbox" style="display:block;">
+        <div class="lb-wrap">
+            <a href="#" class="close">x</a>
+            <div class="lb-content">
+                <form method="post" action="/home/register">
+                  <div class="row"  method="post" action="/Home/register" id="form register" ></div>
+                    <h3>Register</h3>
+                    <div class="f-item full-width">
+                        <label for="f_name"> Name </label>
+                        <input type="text" id="ns _name" name="Customer_Name" />
+                    </div>
+                    <div class="f-item full-width">
+                        <label for="email">E-mail address</label>
+                        <input  type="email" id="email" name="Customer_Email" />
+                    </div>
+                    <div class="f-item full-width">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="Customer_Password" />
+                    </div>
+                    <div class="f-item full-width">
+                        <label for="Address">Address</label>
+                        <input type="text" id="Address" name="Customer_Address" />
+                    </div><div class="f-item full-width">
+                        <label for="Phoneno">Phone no</label>
+                        <input type="tel" id="Phone" name="Customer_Phone" />
+                    </div>
+                    
+                    <div class="f-item checkbox full-width">
+                        <p>By clicking "Create Account" you confirm that you accept the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>. </p>
+                        <input type="submit" id="register" name="register" value="Create Account" class="gradient-button" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+   

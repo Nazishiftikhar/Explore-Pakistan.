@@ -1,0 +1,63 @@
+﻿@{ Layout = "~/views/shared/_LayoutCustomers.cshtml";
+}
+@Html.Raw(ViewBag.msg);
+<!--slider-->
+<div class="slider">
+    <ul id="hero-gallery" class="cS-hidden">
+        <li data-thumb="images/uploads/slider7.jpg">
+            <img src="images/uploads/slider7.jpg" alt="" />
+        </li>
+        <li data-thumb="images/uploads/slider3.jpg">
+            <img src="images/uploads/slider3.jpg" alt="" />
+        </li>
+        <li data-thumb="images/uploads/slider2.jpg">
+            <img src="images/uploads/slider2.jpg" alt="" />
+        </li>
+    </ul>
+</div>
+<!--//slider-->
+<a href="~/Views/Home/login_Customers"></a>
+<!--search-->
+<!--//search-->
+<!--main-->
+div class="main-search">
+<div class="wrap">
+    <form id="main-search" method="post" action="/Home/login_Customers">
+        <div class="row">
+
+
+            <div class="lightbox" style="display:block;">
+                <div class="lb-wrap">
+
+                    <div class="lb-content">
+                        <div class="row">
+                            <h3>Log in</h3>
+                            <div class="f-item full-width">
+                                <label for="email">E-mail address</label>
+                                <input type="email" id="email" name="Customer_Email" />
+                            </div>
+                            <div class="f-item full-width">
+                                <label for="password">Password</label>
+                                <input type="password" id="password" name="Customer_Password" />
+                            </div>
+                            <div class="f-item checkbox full-width">
+                                <input type="checkbox" id="remember_me" name="checkbox" />
+                                <label for="remember_me">Remember me next time</label>
+                            </div>
+                            <div class="f-item full-width">
+                                <p>
+                                    <a href="#" title="Forgot password?">Forgot password?</a><br />
+                                    Dont have an account yet? <a href="@Url.Action("register","Home")" title="register">register</a><br />
+                                    Go To Home <a href="@Url.Action("index","Home")" method="post" title="Sign up">Click Here</a>
+
+                                </p>
+                                <input type="submit" id="login" name="login" value="login" class="gradient-button" />
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
